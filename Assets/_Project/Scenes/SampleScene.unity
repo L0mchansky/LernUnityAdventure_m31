@@ -715,6 +715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 276855471}
+  _projectileSettings: {fileID: 11400000, guid: 69ad9a95c5adfa9499e48935583523a7,
+    type: 2}
 --- !u!1001 &98978801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1708,6 +1710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _virtualCamera: {fileID: 521154328}
+  _launchPoint: {fileID: 1892921591}
 --- !u!1001 &278457923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9273,6 +9276,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1878457382}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1892921590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1892921591}
+  m_Layer: 0
+  m_Name: LaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1892921591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892921590}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.629, z: 0.437}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2054421723}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1931892249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10681,6 +10715,7 @@ Transform:
   m_Children:
   - {fileID: 1094552244}
   - {fileID: 902248567}
+  - {fileID: 1892921591}
   m_Father: {fileID: 276855469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2113401298
