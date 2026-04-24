@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class PlayerCharacterController : Controller
+namespace LernUnityAdventure_m31
 {
-    private Character _character;
-
-    public PlayerCharacterController(Character character)
+    public class PlayerCharacterController : Controller
     {
-        _character = character;
-    }
+        private Character _character;
 
-    protected override void UpdateLogic(float deltaTime)
-    {
-        Vector3 inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        public PlayerCharacterController(Character character)
+        {
+            _character = character;
+        }
 
-        _character.SetMoveDirection(inputDirection);
-        _character.SetRotationDirection(inputDirection);
+        protected override void UpdateLogic(float deltaTime)
+        {
+            Vector3 inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+
+            _character.SetMoveDirection(inputDirection);
+            _character.SetRotationDirection(inputDirection);
+        }
     }
 }

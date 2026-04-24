@@ -1,4 +1,7 @@
-﻿public interface IInitializable
+﻿namespace LernUnityAdventure_m31
 {
-    void Initialize();
+    public interface IInitializable
+    {
+        void Initialize();
+    }
 }

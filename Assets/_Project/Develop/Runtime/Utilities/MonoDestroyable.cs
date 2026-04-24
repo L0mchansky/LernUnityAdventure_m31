@@ -1,17 +1,20 @@
 using System;
 using UnityEngine;
 
-public class MonoDestroyable : MonoBehaviour
+namespace LernUnityAdventure_m31 
 {
-    public event Action<MonoDestroyable> Destroyed;
-
-    public bool IsDestroyed { get; private set; }
-
-    public void Destroy()
+    public class MonoDestroyable : MonoBehaviour
     {
-        Destroy(gameObject);
+        public event Action<MonoDestroyable> Destroyed;
 
-        IsDestroyed = true;
-        Destroyed?.Invoke(this);
+        public bool IsDestroyed { get; private set; }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
+
+            IsDestroyed = true;
+            Destroyed?.Invoke(this);
+        }
     }
 }

@@ -1,37 +1,40 @@
 ﻿using UnityEngine;
 
-public class CharacterView : MonoBehaviour, IInitializable
+namespace LernUnityAdventure_m31
 {
-    private readonly int IsRunningKey = Animator.StringToHash("IsRunning");
-
-    [SerializeField] private Animator _animator;
-    [SerializeField] private Character _character;
-
-    private bool _isInit;
-
-    public void Initialize()
+    public class CharacterView : MonoBehaviour, IInitializable
     {
-        _isInit = true;
-    }
+        private readonly int IsRunningKey = Animator.StringToHash("IsRunning");
 
-    private void Update()
-    {
-        if (_isInit == false)
-            return;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private Character _character;
 
-        if (_character.CurrentVelocity.magnitude > 0.05f)
-            StartRunning();
-        else
-            StopRunning();
-    }
+        private bool _isInit;
 
-    private void StopRunning()
-    {
-        _animator.SetBool(IsRunningKey, false);
-    }
+        public void Initialize()
+        {
+            _isInit = true;
+        }
 
-    private void StartRunning()
-    {
-        _animator.SetBool(IsRunningKey, true);
+        private void Update()
+        {
+            if (_isInit == false)
+                return;
+
+            if (_character.CurrentVelocity.magnitude > 0.05f)
+                StartRunning();
+            else
+                StopRunning();
+        }
+
+        private void StopRunning()
+        {
+            _animator.SetBool(IsRunningKey, false);
+        }
+
+        private void StartRunning()
+        {
+            _animator.SetBool(IsRunningKey, true);
+        }
     }
 }

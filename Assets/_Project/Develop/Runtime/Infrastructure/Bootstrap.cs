@@ -1,26 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
-public class Bootstrap : MonoBehaviour
+namespace LernUnityAdventure_m31
 {
-    [SerializeField] Character _character;
-
-    private PlayerCharacterController _playerCharacterController;
-
-
-    void Awake()
+    public class Bootstrap : MonoBehaviour
     {
-        _character.Initialize(new CharacterControllerDirectionalMover(_character.GetComponent<CharacterController>(), 10), new DirectionalRotator(_character.transform, 500));
+        [SerializeField] Character _character;
 
-        _playerCharacterController = new PlayerCharacterController(_character);
-        _playerCharacterController.Enable();
-    }
+        private PlayerCharacterController _playerCharacterController;
 
 
-    void Update()
-    {
-        _playerCharacterController.Update(Time.deltaTime);
+        void Awake()
+        {
+            _character.Initialize(new CharacterControllerDirectionalMover(_character.GetComponent<CharacterController>(), 10), new DirectionalRotator(_character.transform, 500));
+
+            _playerCharacterController = new PlayerCharacterController(_character);
+            _playerCharacterController.Enable();
+        }
+
+
+        void Update()
+        {
+            _playerCharacterController.Update(Time.deltaTime);
+        }
     }
 }
