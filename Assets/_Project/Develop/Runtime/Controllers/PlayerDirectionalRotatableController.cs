@@ -2,20 +2,20 @@
 
 namespace LernUnityAdventure_m31
 {
-    public class PlayerDirectionalMovableController : Controller
+    public class PlayerDirectionalRotatableController : Controller
     {
-        private IDirectionalMovable _movable;
+        private IDirectionalRotatable _rotatable;
 
-        public PlayerDirectionalMovableController(IDirectionalMovable movable)
+        public PlayerDirectionalRotatableController(IDirectionalRotatable rotatable)
         {
-            _movable = movable;
+            _rotatable = rotatable;
         }
 
         protected override void UpdateLogic(float deltaTime)
         {
             Vector3 inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
-            _movable.SetMoveDirection(inputDirection);
+            _rotatable.SetRotationDirection(inputDirection);
         }
     }
 

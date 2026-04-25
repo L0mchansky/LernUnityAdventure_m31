@@ -8,7 +8,8 @@ namespace LernUnityAdventure_m31
 
         [SerializeField] ProjectileConfig _projectileConfig;
 
-        private PlayerCharacterController _playerCharacterController;
+        private PlayerDirectionalMovableController _playerDirectionalMovableController;
+        private PlayerDirectionalRotatableController _playerDirectionalRotatableController;
         private PlayerLauncherController _playerLauncherController;
 
         private CoroutineStartService _coroutineStartService;
@@ -27,16 +28,20 @@ namespace LernUnityAdventure_m31
                 launcherProjectiles
                 );
 
-            _playerCharacterController = new PlayerCharacterController(_character);
-            _playerCharacterController.Enable();
+            _playerDirectionalMovableController = new (_character);
+            _playerDirectionalMovableController.Enable();
 
-            _playerLauncherController = new PlayerLauncherController(_character);
+            _playerDirectionalRotatableController = new (_character);
+            _playerDirectionalRotatableController.Enable();
+
+            _playerLauncherController = new (_character);
             _playerLauncherController.Enable();
         }
 
         void Update()
         {
-            _playerCharacterController.Update(Time.fixedDeltaTime);
+            _playerDirectionalMovableController.Update(Time.fixedDeltaTime);
+            _playerDirectionalRotatableController.Update(Time.fixedDeltaTime);
             _playerLauncherController.Update(Time.fixedDeltaTime);
         }
     }

@@ -3,18 +3,23 @@ using UnityEngine.TextCore.Text;
 
 namespace LernUnityAdventure_m31
 {
-    public class Character : MonoDestroyable
+    public class Character : MonoDestroyable, IDirectionalMovable, IDirectionalRotatable
     {
         [SerializeField] Transform _virtualCamera;
         [SerializeField] Transform _launchPoint;
 
-        private CharacterControllerDirectionalMover _mover;
+        private DirectionalMover _mover;
         private DirectionalRotator _rotator;
+
         private ILaunch _launcher;
 
+        //TODO: Зачем?
         public Vector3 CurrentVelocity => _mover.CurrentVelocity;
 
-        public void Initialize(CharacterControllerDirectionalMover mover, DirectionalRotator rotator, ILaunch launcher)
+        //TODO: Зачем?
+        public Quaternion CurrentRotation => _rotator.CurrentRotation;
+
+        public void Initialize(DirectionalMover mover, DirectionalRotator rotator, ILaunch launcher)
         {
             _mover = mover;
             _rotator = rotator;
