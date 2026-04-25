@@ -715,8 +715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 276855471}
-  _projectileSettings: {fileID: 11400000, guid: 69ad9a95c5adfa9499e48935583523a7,
-    type: 2}
+  _projectileConfig: {fileID: 11400000, guid: 69ad9a95c5adfa9499e48935583523a7, type: 2}
 --- !u!1001 &98978801
 PrefabInstance:
   m_ObjectHideFlags: 0
