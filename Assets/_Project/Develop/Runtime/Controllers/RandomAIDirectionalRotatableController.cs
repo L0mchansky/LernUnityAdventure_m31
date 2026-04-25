@@ -1,25 +1,25 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace LernUnityAdventure_m31
 {
-    public class RandomAICharacterController : Controller
+    public class RandomAIDirectionalRotatableController : Controller
     {
-        private Character _character;
+        private IDirectionalRotatable _rotatable;
 
         private float _time;
         private float _timeToChangeDirection;
 
-        private Vector3 _inputDirection;
+        Vector3 _inputDirection;
 
-        public RandomAICharacterController(Character character, float timeToChangeDirection)
+        public RandomAIDirectionalRotatableController(IDirectionalRotatable rotatable, float timeToChangeDirection)
         {
-            _character = character;
+            _rotatable = rotatable;
             _timeToChangeDirection = timeToChangeDirection;
         }
 
         protected override void UpdateLogic(float deltaTime)
         {
-            _time += Time.deltaTime;
+            _time += deltaTime;
 
             if (_time >= _timeToChangeDirection)
             {
@@ -27,8 +27,7 @@ namespace LernUnityAdventure_m31
                 _time = 0;
             }
 
-            _character.SetMoveDirection(_inputDirection);
-            _character.SetRotationDirection(_inputDirection);
+            _rotatable.SetRotationDirection(_inputDirection);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace LernUnityAdventure_m31
             _runner = runner;
         }
 
-        public ILaunch GetLaunch(LauncherProjectileType type)
+        public LauncherProjectiles GetLaunch(LauncherProjectileType type)
         {
             switch (type)
             {
