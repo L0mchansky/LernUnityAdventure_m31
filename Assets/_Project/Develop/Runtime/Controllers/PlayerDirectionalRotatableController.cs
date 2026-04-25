@@ -18,5 +18,4 @@ namespace LernUnityAdventure_m31
             _rotatable.SetRotationDirection(inputDirection);
         }
     }
-
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-
-namespace LernUnityAdventure_m31
+﻿namespace LernUnityAdventure_m31
 {
     public class Bullet : MonoDestroyDisposable
     {

@@ -18,7 +18,7 @@ namespace LernUnityAdventure_m31
                 return;
             }
 
-            _character.Launch();
+            _character.Shoot();
         }
     }
 }

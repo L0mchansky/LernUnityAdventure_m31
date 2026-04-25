@@ -18,5 +18,4 @@ namespace LernUnityAdventure_m31
             _movable.SetMoveDirection(inputDirection);
         }
     }
-
 }
