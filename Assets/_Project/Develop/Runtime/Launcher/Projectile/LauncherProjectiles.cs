@@ -21,20 +21,22 @@ namespace LernUnityAdventure_m31
         {
             Projectile projectile = GameObject.Instantiate(_projectileSettings.ProjectilePrefab);
             projectile.Initialize(_projectileSettings);
+            projectile.transform.position = startPosition;
 
-            _launchService.StartCoroutine(Run(projectile, startPosition, launchDirection));
+            TransformDirectionalMover mover = new(projectile.transform, _projectileSettings.Speed);
+            mover.SetInputDirection(launchDirection);
+
+            _launchService.StartCoroutine(Run(projectile, startPosition, launchDirection, mover));
         }
 
-        private IEnumerator Run(Projectile projectile, Vector3 startPosition, Vector3 launchDirection)
+        private IEnumerator Run(Projectile projectile, Vector3 startPosition, Vector3 launchDirection, DirectionalMover mover)
         {
             Timer timer = new(projectile.Lifetime, _runner);
             timer.Start();
 
-            projectile.transform.position = startPosition;
-
             while (timer.IsRunning)
             {
-                projectile.transform.position += Time.fixedDeltaTime * launchDirection * projectile.Speed;
+                mover.Update(Time.fixedDeltaTime);
                 yield return null;
             }
 

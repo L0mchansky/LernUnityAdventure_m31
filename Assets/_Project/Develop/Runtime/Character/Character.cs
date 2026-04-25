@@ -3,7 +3,7 @@ using UnityEngine.TextCore.Text;
 
 namespace LernUnityAdventure_m31
 {
-    public class Character : MonoDestroyable, IDirectionalMovable, IDirectionalRotatable
+    public class Character : MonoDestroyDisposable, IDirectionalMovable, IDirectionalRotatable
     {
         [SerializeField] Transform _virtualCamera;
         [SerializeField] Transform _launchPoint;
@@ -13,7 +13,6 @@ namespace LernUnityAdventure_m31
 
         private ILaunch _launcher;
 
-        //TODO: Зачем?
         public Vector3 CurrentVelocity => _mover.CurrentVelocity;
 
         //TODO: Зачем?
