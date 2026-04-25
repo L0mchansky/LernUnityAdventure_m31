@@ -6,11 +6,11 @@ namespace LernUnityAdventure_m31
     {
         [SerializeField] Character _character;
 
-        [SerializeField] ProjectileConfig _projectileConfig;
+        [SerializeField] BulletConfig _bulletConfig;
 
         private PlayerDirectionalMovableController _playerDirectionalMovableController;
         private PlayerDirectionalRotatableController _playerDirectionalRotatableController;
-        private PlayerLauncherController _playerLauncherController;
+        private PlayerShootController _playerLauncherController;
 
         private CoroutineStartService _coroutineStartService;
 
@@ -19,8 +19,8 @@ namespace LernUnityAdventure_m31
         {
             _coroutineStartService = new (this);
 
-            LauncherFactory launcherFactory = new (_projectileConfig, _coroutineStartService, this);
-            ILaunch launcherProjectiles = launcherFactory.GetLaunch(LauncherType.Projectile);
+            LauncherProjectileFactory launcherFactory = new (_bulletConfig, _coroutineStartService, this);
+            LauncherProjectiles launcherProjectiles = launcherFactory.GetLaunch(LauncherProjectileType.Bullet);
 
             _character.Initialize(
                 new CharacterControllerDirectionalMover(_character.GetComponent<CharacterController>(), 10),

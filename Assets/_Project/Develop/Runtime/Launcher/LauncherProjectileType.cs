@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace LernUnityAdventure_m31
 {
-    public enum LauncherType
+    public enum LauncherProjectileType
     {
-        Projectile = 10
+        Bullet = 10
     }
 }

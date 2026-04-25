@@ -7,24 +7,24 @@ using UnityEngine;
 
 namespace LernUnityAdventure_m31
 {
-    public class LauncherFactory
+    public class LauncherProjectileFactory
     {
-        private ProjectileConfig _projectileConfig;
+        private BulletConfig _projectileConfig;
         private CoroutineStartService _launchService;
         private MonoBehaviour _runner;
 
-        public LauncherFactory(ProjectileConfig launcherConfig, CoroutineStartService launchService, MonoBehaviour runner)
+        public LauncherProjectileFactory(BulletConfig launcherConfig, CoroutineStartService launchService, MonoBehaviour runner)
         {
             _projectileConfig = launcherConfig;
             _launchService = launchService;
             _runner = runner;
         }
 
-        public ILaunch GetLaunch(LauncherType type)
+        public ILaunch GetLaunch(LauncherProjectileType type)
         {
             switch (type)
             {
-                case LauncherType.Projectile:
+                case LauncherProjectileType.Bullet:
                     return GetNewLauncherProjectiles();
                 default:
                     return null;

@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace LernUnityAdventure_m31
 {
-    public class LauncherProjectiles : ILaunch
+    public class LauncherProjectiles
     {
         private CoroutineStartService _launchService;
-        private ProjectileConfig _projectileSettings;
+        private BulletConfig _projectileSettings;
         private MonoBehaviour _runner;
 
-        public LauncherProjectiles(CoroutineStartService launchService, ProjectileConfig projectileSettings, MonoBehaviour runner)
+        public LauncherProjectiles(CoroutineStartService launchService, BulletConfig projectileSettings, MonoBehaviour runner)
         {
             _launchService = launchService;
             _projectileSettings = projectileSettings;
@@ -19,7 +19,7 @@ namespace LernUnityAdventure_m31
 
         public void Launch(Vector3 startPosition, Vector3 launchDirection)
         {
-            Projectile projectile = GameObject.Instantiate(_projectileSettings.ProjectilePrefab);
+            Bullet projectile = GameObject.Instantiate(_projectileSettings.ProjectilePrefab);
             projectile.Initialize(_projectileSettings);
             projectile.transform.position = startPosition;
 
@@ -29,7 +29,7 @@ namespace LernUnityAdventure_m31
             _launchService.StartCoroutine(Run(projectile, startPosition, launchDirection, mover));
         }
 
-        private IEnumerator Run(Projectile projectile, Vector3 startPosition, Vector3 launchDirection, DirectionalMover mover)
+        private IEnumerator Run(Bullet projectile, Vector3 startPosition, Vector3 launchDirection, DirectionalMover mover)
         {
             Timer timer = new(projectile.Lifetime, _runner);
             timer.Start();

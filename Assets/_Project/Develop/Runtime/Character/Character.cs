@@ -3,7 +3,7 @@ using UnityEngine.TextCore.Text;
 
 namespace LernUnityAdventure_m31
 {
-    public class Character : MonoDestroyDisposable, IDirectionalMovable, IDirectionalRotatable
+    public class Character : MonoDestroyDisposable, IDirectionalMovable, IDirectionalRotatable, IShoot
     {
         [SerializeField] Transform _virtualCamera;
         [SerializeField] Transform _launchPoint;
@@ -11,14 +11,14 @@ namespace LernUnityAdventure_m31
         private DirectionalMover _mover;
         private DirectionalRotator _rotator;
 
-        private ILaunch _launcher;
+        private LauncherProjectiles _launcher;
 
         public Vector3 CurrentVelocity => _mover.CurrentVelocity;
 
         //TODO: Зачем?
         public Quaternion CurrentRotation => _rotator.CurrentRotation;
 
-        public void Initialize(DirectionalMover mover, DirectionalRotator rotator, ILaunch launcher)
+        public void Initialize(DirectionalMover mover, DirectionalRotator rotator, LauncherProjectiles launcher)
         {
             _mover = mover;
             _rotator = rotator;
@@ -38,6 +38,6 @@ namespace LernUnityAdventure_m31
 
         public void SetRotationDirection(Vector3 inputDirection) => _rotator.SetInputDirection(inputDirection);
 
-        public void Launch() => _launcher.Launch(_launchPoint.position, _launchPoint.forward);
+        public void Shoot() => _launcher.Launch(_launchPoint.position, _launchPoint.forward);
     }
 }

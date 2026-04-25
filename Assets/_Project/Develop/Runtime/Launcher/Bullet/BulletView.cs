@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace LernUnityAdventure_m31
 {
-    public class ProjectileView : MonoBehaviour
+    public class BulletView : MonoBehaviour
     {
 
     }

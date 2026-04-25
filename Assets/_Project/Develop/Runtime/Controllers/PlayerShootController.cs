@@ -2,11 +2,11 @@
 
 namespace LernUnityAdventure_m31
 {
-    public class PlayerLauncherController : Controller
+    public class PlayerShootController : Controller
     {
         private Character _character;
 
-        public PlayerLauncherController(Character character)
+        public PlayerShootController(Character character)
         {
             _character = character;
         }

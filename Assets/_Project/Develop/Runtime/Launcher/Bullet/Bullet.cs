@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace LernUnityAdventure_m31
 {
-    public class Projectile : MonoDestroyDisposable
+    public class Bullet : MonoDestroyDisposable
     {
-        public void Initialize(ProjectileConfig projectileSettings)
+        public void Initialize(BulletConfig projectileSettings)
         {
             Damage = projectileSettings.Damage;
             Lifetime = projectileSettings.Lifetime;
