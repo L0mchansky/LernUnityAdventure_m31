@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace LernUnityAdventure_m31
 {
-    [CreateAssetMenu(fileName = "NewProjectile", menuName = "Game/Projectile")]
-    public class ProjectileSettings: ScriptableObject
+    [CreateAssetMenu(fileName = "NewProjectileConfig", menuName = "Game/Projectile")]
+    public class ProjectileConfig: ScriptableObject
     {
         [field: SerializeField]  public Projectile ProjectilePrefab { get; private set; }
         [field: SerializeField]  public float Damage { get; private set; }

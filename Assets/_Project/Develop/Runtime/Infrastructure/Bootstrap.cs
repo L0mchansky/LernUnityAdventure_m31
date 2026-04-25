@@ -5,7 +5,7 @@ namespace LernUnityAdventure_m31
     public class Bootstrap : MonoBehaviour
     {
         [SerializeField] Character _character;
-        [SerializeField] ProjectileSettings _projectileSettings;
+        [SerializeField] ProjectileConfig _projectileSettings;
 
         private PlayerCharacterController _playerCharacterController;
         private PlayerLauncherController _playerLauncherController;

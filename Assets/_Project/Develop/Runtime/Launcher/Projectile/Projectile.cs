@@ -9,7 +9,7 @@ namespace LernUnityAdventure_m31
         public float Lifetime { get; private set; }
         public float Speed { get; private set; }
 
-        public void Initialize(ProjectileSettings projectileSettings)
+        public void Initialize(ProjectileConfig projectileSettings)
         {
             Damage = projectileSettings.Damage;
             Lifetime = projectileSettings.Lifetime;

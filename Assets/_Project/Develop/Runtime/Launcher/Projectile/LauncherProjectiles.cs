@@ -8,9 +8,9 @@ namespace LernUnityAdventure_m31
     {
         private BulletType _bulltetType;
         private CoroutineStartService _launchService;
-        private ProjectileSettings _projectileSettings;
+        private ProjectileConfig _projectileSettings;
 
-        public LauncherProjectiles(BulletType bulletType, CoroutineStartService launchService, ProjectileSettings projectileSettings)
+        public LauncherProjectiles(BulletType bulletType, CoroutineStartService launchService, ProjectileConfig projectileSettings)
         {
             _bulltetType = bulletType;
             _launchService = launchService;

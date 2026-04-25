@@ -15,5 +15,5 @@ MonoBehaviour:
   <ProjectilePrefab>k__BackingField: {fileID: 3790701729127652406, guid: a22819a19118df447b1662de74e6ae82,
     type: 3}
   <Damage>k__BackingField: 2
-  <Lifetime>k__BackingField: 1
-  <Speed>k__BackingField: 12
+  <Lifetime>k__BackingField: 0.5
+  <Speed>k__BackingField: 20
