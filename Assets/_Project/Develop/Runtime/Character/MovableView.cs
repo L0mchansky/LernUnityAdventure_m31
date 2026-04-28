@@ -2,17 +2,19 @@
 
 namespace LernUnityAdventure_m31
 {
-    public class CharacterView : MonoBehaviour, IInitializable
+    public class MovableView : MonoBehaviour, IInitializable
     {
         private readonly int IsRunningKey = Animator.StringToHash("IsRunning");
 
         [SerializeField] private Animator _animator;
-        [SerializeField] private Character _character;
+        private IMovable _movable;
 
         private bool _isInit;
 
         public void Initialize()
         {
+            _movable = GetComponentInParent<IMovable>();
+
             _isInit = true;
         }
 
@@ -21,7 +23,7 @@ namespace LernUnityAdventure_m31
             if (_isInit == false)
                 return;
 
-            if (_character.CurrentVelocity.magnitude > 0.05f)
+            if (_movable.CurrentVelocity.magnitude > 0.05f)
                 StartRunning();
             else
                 StopRunning();

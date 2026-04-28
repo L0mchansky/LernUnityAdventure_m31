@@ -2,9 +2,8 @@
 
 namespace LernUnityAdventure_m31
 {
-    public interface IDirectionalMovable
+    public interface IDirectionalMovable: IMovable
     {
-        Vector3 CurrentVelocity { get; }
         void SetMoveDirection(Vector3 inputDirection);
     }
 }
